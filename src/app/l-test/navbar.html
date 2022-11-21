@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img style="padding-left: 200px;" height="70xp" src="https://www.pngitem.com/pimgs/m/195-1956899_college-life-png-icon-png-download-library-icon.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <h5 class="text-success">Library Membership <br style="width: 20rem;">Registration Form</h5>
+        </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <h5 class="text-warning">To get membership you <br style="width: 5rem;">should required to fill this form</h5>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid mt-3">
+
+    <div class="text-left text-secondary">
+        <h3>Fill your correct information </h3>
+        <h6>Member number:80 <br>Form:R20<br>Expires:10/12/2023</h6>
+    </div>
+    <form #frm="ngForm" (ngSubmit)="submit(frm)">
+        <div class="container">
+            <h5 class="row bg-danger">1. Member FullName</h5>
+            <div class="form-group">
+                <label for="id1">First Name</label>
+                <input required ngModel id="id1" name="V1" type="text" class="form-control" #V1="ngModel"
+                    (change)="changeV1(V1)" minlength="5" maxlength="10" />
+                <div class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+                    <div *ngIf="V1.errors?.['required']">First name is required</div>
+                    <div *ngIf="V1.errors?.['minlength']">Minimum character length should be 5</div>
+                    <div *ngIf="V1.errors?.['maxlength']">Maximum character length should be 10</div>
+                </div>
+                <label for="id1">Last Name</label>
+                <input required ngModel id="id1" name="V1" type="text" class="form-control" #V1="ngModel"
+                    (change)="changeV1(V1)" minlength="5" maxlength="15" />
+                <div class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+                    <div *ngIf="V1.errors?.['required']">Last name is required</div>
+                    <div *ngIf="V1.errors?.['minlength']">Minimum character length should be 5</div>
+                    <div *ngIf="V1.errors?.['maxlength']">Maximum character length should be 10</div>
+                </div>
+                <label for="id1">Middle Name (if any)</label>
+                <input required ngModel id="id1" name="V1" type="text" class="form-control" #V1="ngModel"
+                    (change)="changeV1(V1)" minlength="5" maxlength="15" />
+            </div><br>
+            <h5 class="row bg-danger">2. Gender</h5>
+            <form class="radio" #frmm="ngForm">
+                <label for="">
+                    <input type="radio" ngModel name="Selected:" value="Male">
+                    Male
+                </label> <br>
+                <label for="">
+                    <input type="radio" ngModel name="Selected:" value="Female">
+                    Female</label><br>
+                {{frmm.value | json}}
+            </form>
+            <h5 class="row bg-danger">3. Date of Birth</h5>
+            <div class="form-group">
+                <label for="id1">D.O.B</label>
+                <input required ngModel id="id1" name="V1" type="number" class="form-control" #V1="ngModel"
+                    (change)="changeV1(V1)" minlength="5" maxlength="15" />
+                <div class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+                    <div *ngIf="V1.errors?.['required']">Date of Birth is required</div>
+                    
+                </div>
+                </div><br>
+                <h5 class="row bg-danger">4.Email address</h5>
+                <div class="form-group">
+                    <label for="id1">Email</label>
+                    <input required ngModel id="id1" name="V1" type="number" class="form-control" #V1="ngModel"
+                        (change)="changeV1(V1)" minlength="5" maxlength="15" />
+                    <div class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+                        <div *ngIf="V1.errors?.['required']">Email is required</div>
+                        <div *ngIf="V1.errors?.['minlength']">Minimum character length should be 5</div>
+                    <div *ngIf="V1.errors?.['maxlength']">Maximum character length should be 10</div>
+                        
+                    </div>
+                    </div><br>
+                    <h5 class="row bg-danger">5.Membership Period</h5>
+                    <form class="checkbox" #frmmm="ngForm">
+                        <div class="checkbox"> <label></label>
+                            <br>3-months<input type="checkbox" id="chkidl" ngModel name="qual1">
+                            <br>6-months<input type="checkbox" id="chkid2" ngModel name="qual2">
+                          </div><br>
+                        {{frmmm.value | json}}
+                    </form><br>
+                    <h5 class="row bg-danger">6.Address</h5>
+                    <div class="form-group">
+                        <label for="id1">Address</label>
+                        <input required ngModel id="id1" name="V1" type="number" class="form-control" #V1="ngModel"
+                            (change)="changeV1(V1)" minlength="5" maxlength="15" />
+                        <div class="alert alert-danger" *ngIf="V1.touched && !V1.valid">
+                            <div *ngIf="V1.errors?.['required']">address is required</div>
+                            <div *ngIf="V1.errors?.['minlength']">Minimum character length should be 5</div>
+                    <div *ngIf="V1.errors?.['maxlength']">Maximum character length should be 10</div>
+                            
+                        </div>
+                        </div><br>
+
+                        <button type="button" class="btn btn-outline-warning btn-lg">Submit</button>
+                        <button type="button" class="btn btn-outline-success btn-lg">Reset</button>
+        </div>
+
+    </form>
+
+</div>
+
